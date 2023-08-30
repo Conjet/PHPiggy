@@ -49,11 +49,6 @@ class Router
 
             $action = $controllerInstance->$function();
 
-            foreach ($this->middlewares as $middleware) {
-                $middlewareInstance = new $middleware;
-                $action = fn () => $middlewareInstance->process($action);
-            }
-
             $action();
 
             return;
