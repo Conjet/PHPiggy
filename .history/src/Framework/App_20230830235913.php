@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Framework;
 
-// echo time();
+echo time();
 class App
 {
     private Router $router;

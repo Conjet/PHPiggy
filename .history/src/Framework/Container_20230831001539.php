@@ -24,16 +24,14 @@ class Container
             throw new ContainerException("Class {$className} is not instantiable");
         }
 
-        $constructor = $reflectionClass->getConstructor();
+        $contructor = $reflectionClass->getConstructor();
 
-        if (!$constructor) {
+        if (!$contructor) {
             return new $className;
         }
 
-        $params = $constructor->getParameters();
-        dd($params);
-        if (count($params) === 0) {
-            return new $className;
-        }
+        $parameters = $contructor->getParameters();
+
+        dd($contructor);
     }
 }
