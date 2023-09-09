@@ -10,13 +10,13 @@ return [
     TemplateEngine::class => fn () => new TemplateEngine(Paths::VIEW),
     ValidatorService::class =>  fn () => new ValidatorService(),
     Database::class => fn () => new Database(
-        $_ENV['DB_DRIVER'],
+        'mysql',
         [
-            'host' => $_ENV['DB_DRIVER'],
-            'port' => $_ENV['DB_PORT'],
-            'dbname' => $_ENV['DB_NAME']
+            'host' => 'localhost',
+            'port' => 3306,
+            'dbname' => 'phpiggy'
         ],
-        $_ENV['DB_USER'],
-        $_ENV['DB_PASS']
+        'root',
+        ''
     )
 ];
